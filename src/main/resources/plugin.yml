@@ -1,0 +1,6 @@
+name: Murder
+version: ${project.version}
+main: com.murder.Murder
+load: STARTUP
+description: Murder Mystery for minecraft 1.12.2
+prefix: $
