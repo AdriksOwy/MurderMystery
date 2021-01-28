@@ -1,5 +1,6 @@
 package com.murder.npc;
 
+import org.bukkit.Color;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
@@ -17,7 +18,7 @@ public class NPCManager {
                 if(player.hasPermission("npc")) {
                     Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
                     villager.setCustomName("Murder Mystery");
-                    player.sendMessage("Villager created!");
+                    player.sendMessage(Color.RED + "Villager was created!");
                 }
             }
         }
