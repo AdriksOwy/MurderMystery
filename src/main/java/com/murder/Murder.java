@@ -41,7 +41,7 @@ public final class Murder extends JavaPlugin {
             return;
         }
 
-        File destDir = new File(root+File.pathSeparator+"world");
+        File destDir = new File(root+File.pathSeparator+world);
 
         try {
             FileUtils.copyDirectory(srcDir, destDir);
@@ -49,7 +49,7 @@ public final class Murder extends JavaPlugin {
             ex.printStackTrace();
         }
 
-        Bukkit.getServer().createWorld(new WorldCreator("world"));
+        Bukkit.getServer().createWorld(new WorldCreator(world));
     }
 
 }
