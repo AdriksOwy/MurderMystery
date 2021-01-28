@@ -1,5 +1,6 @@
-package com.murder;
+package com.murder.managers;
 
+import com.murder.Murder;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -15,7 +16,7 @@ public class WorldManager {
    public JavaPlugin plugin;
 
     public WorldManager(){
-        this.plugin = Murder.plugin;
+        this.plugin = Murder.getMainPlugin();
     }
 
     public void createWorld(String world){
