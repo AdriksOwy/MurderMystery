@@ -1,6 +1,5 @@
 package com.murder;
 
-import jdk.tools.jlink.plugin.Plugin;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.WorldCreator;
