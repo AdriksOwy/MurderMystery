@@ -7,7 +7,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
-;
 
 public class WorldManager {
    public JavaPlugin plugin;
