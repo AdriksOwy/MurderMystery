@@ -4,3 +4,10 @@ main: com.murder.Murder
 load: STARTUP
 description: Murder Mystery for minecraft 1.12.2
 prefix: $
+
+commands:
+  npccreate:
+    description: Creating a npc.
+    usage: /npccreate
+    permission: npc
+    permission-message: Nie masz uprawnien do uzycia tej komendy!
