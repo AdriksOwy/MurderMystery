@@ -17,7 +17,7 @@ public class NPCManager {
                 if(player.hasPermission("npc")) {
                     Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
                     villager.setCustomName("Murder Mystery");
-                    player.sendMessage("Utworzono Villagera!");
+                    player.sendMessage("Villager created!");
                 }
             }
         }
