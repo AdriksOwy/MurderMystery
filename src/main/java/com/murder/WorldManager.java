@@ -13,8 +13,8 @@ import java.io.IOException;
 public class WorldManager {
    public JavaPlugin plugin;
 
-    public WorldManager(JavaPlugin plugin){
-        this.plugin = plugin;
+    public WorldManager(){
+        this.plugin = Murder.plugin;
     }
 
     public void createWorld(String world){
