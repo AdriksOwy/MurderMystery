@@ -8,7 +8,7 @@ import org.bukkit.entity.Villager;
 
 import java.util.UUID;
 
-public class npcmanager {
+public class NPCManager {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(cmd.getName().equalsIgnoreCase("SetVillager")) {
