@@ -16,6 +16,7 @@ public class WorldManager {
    public JavaPlugin plugin;
 
     public WorldManager(){
+
         this.plugin = Murder.getMainPlugin();
     }
 
@@ -59,7 +60,7 @@ public class WorldManager {
 
     public void teleportPlayersToLocation(List<Player> players, String world, int x, int y, int z){
         Location location = new Location(Bukkit.getWorld(world), x, y, z);
-        for(int i=0; i<=players.size(); i++){
+        for(int i=0; i<=players.size(); i++) {
             Player player = players.get(i);
             player.teleport(location);
         }

@@ -12,6 +12,7 @@ import java.util.UUID;
 public class NPCManager {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+
         if(cmd.getName().equalsIgnoreCase("SetVillager")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
