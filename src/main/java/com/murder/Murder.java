@@ -18,12 +18,12 @@ public final class Murder extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        getLogger().info( ChatColor.YELLOW + " [MurderMystery] Plugin jest wlaczony! " );
+        getLogger().info( ChatColor.AQUA + " [MurderMystery] Plugin is enable! " );
     }
 
     @Override
     public void onDisable() {
-        getLogger().info(ChatColor.RED + " [MurderMystery] Plugin jest wylaczony! " );
+        getLogger().info(ChatColor.RED + " [MurderMystery] Plugin is disable! " );
     }
 
     public void createWorld(String world){
