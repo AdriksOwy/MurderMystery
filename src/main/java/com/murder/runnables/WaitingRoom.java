@@ -17,6 +17,23 @@ public class WaitingRoom extends BukkitRunnable {
         this.stage = stage;
     }
     public void run() {
+        updateTime();
+        List<Player> players = world.getPlayers();
+        int mods = 0;
+        for (Player player : players) {
+            if (player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
+                mods++;
+            }
+        }
+        int playersCount = players.size() - mods;
+        if (playersCount >= 8) {
+            new WaitingRoom(world, stage-1).runTaskAsynchronously(Murder.getMainPlugin());
+        } else {
+            new WaitingRoom(world, 5).runTaskLaterAsynchronously(Murder.getMainPlugin(), 5 * 20);
+        }
+    }
+
+    private void updateTime(){
         switch (stage) {
             case 1:
                 time = 60;
@@ -33,19 +50,6 @@ public class WaitingRoom extends BukkitRunnable {
             case 5:
                 time = 5;
                 break;
-        }
-        List<Player> players = world.getPlayers();
-        int mods = 0;
-        for (Player player : players) {
-            if (player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
-                mods++;
-            }
-        }
-        int playersCount = players.size() - mods;
-        if (playersCount >= 8) {
-            new WaitingRoom(world, stage-1).runTaskAsynchronously(Murder.getMainPlugin());
-        } else {
-            new WaitingRoom(world, 5).runTaskLaterAsynchronously(Murder.getMainPlugin(), 5 * 20);
         }
     }
 }
