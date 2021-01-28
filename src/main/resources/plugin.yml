@@ -6,8 +6,8 @@ description: Murder Mystery for minecraft 1.12.2
 prefix: $
 
 commands:
-  npccreate:
+  SetVillager:
     description: Creating a npc.
-    usage: /npccreate
+    usage: /SetVillager
     permission: npc
     permission-message: Nie masz uprawnien do uzycia tej komendy!
