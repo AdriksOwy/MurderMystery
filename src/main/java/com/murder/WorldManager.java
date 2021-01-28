@@ -2,11 +2,15 @@ package com.murder;
 
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.WorldCreator;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 ;
 
 public class WorldManager {
@@ -52,6 +56,14 @@ public class WorldManager {
         catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public void teleportPlayersToLocation(List<Player> players, Location location){
+        for(int i=0; i<=players.size(); i++){
+            Player player = players.get(i);
+            player.teleport(location);
+        }
+
     }
 
 }
