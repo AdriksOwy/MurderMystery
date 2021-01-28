@@ -43,7 +43,16 @@ public class WorldManager {
         Bukkit.getServer().createWorld(new WorldCreator(world));
     }
 
+    public void deleteWorld(String world) {
+        Bukkit.getServer().unloadWorld(world, true);
+        File dir = new File(Bukkit.getServer().getWorld(world).getWorldFolder().getPath());
 
-
+        try {
+            FileUtils.deleteDirectory(dir);
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
