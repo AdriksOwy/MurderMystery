@@ -17,9 +17,10 @@ public class WaitingRoom extends BukkitRunnable {
         this.stage = stage;
     }
     public void run() {
-        updateTime();
         List<Player> players = world.getPlayers();
         int mods = 0;
+
+        updateTime();
         for (Player player : players) {
             if (player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
                 mods++;
