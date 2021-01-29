@@ -3,10 +3,9 @@ package com.murder;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Villager;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -36,9 +35,9 @@ public final class Murder extends JavaPlugin {
         if(cmd.getName().equalsIgnoreCase("SetVillager")) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                if (player.hasPermission("test.setvillager")) {
+                if (player.hasPermission("npc")) {
                     Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
-                    villager.setCustomName("Murder Mystery");
+                    villager.setCustomName("Murder");
                     player.sendMessage(ChatColor.RED + "Villager was created!");
                     return true;
                 }
@@ -46,15 +45,4 @@ public final class Murder extends JavaPlugin {
         }
         return false;
     }
-
-    @EventHandler
-        public void on(PlayerInteractEntityEvent event) {
-            Player player = event.getPlayer();
-            if(event.getRightClicked() instanceof Villager) {
-               Villager villager = (Villager) event.getRightClicked();
-               if(villager.getCustomName().equalsIgnoreCase("Murder Mystery")) {
-                    player.sendMessage(ChatColor.GREEN + "Omg kurwa dziala!");
-               }
-            }
-        }
 }
