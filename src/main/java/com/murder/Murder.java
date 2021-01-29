@@ -5,8 +5,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Murder extends JavaPlugin {
@@ -38,7 +36,7 @@ public final class Murder extends JavaPlugin {
                 Player player = (Player) sender;
                 if (player.hasPermission("npc")) {
                     Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
-                    villager.setCustomName("Murder");
+                    villager.setCustomName(ChatColor.GREEN + "" + ChatColor.BOLD + "Murder Mystery");
                     player.sendMessage(ChatColor.RED + "Villager was created!");
                     return true;
                 }
