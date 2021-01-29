@@ -5,7 +5,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -44,5 +43,15 @@ public final class Murder extends JavaPlugin {
             }
         }
         return false;
+    }
+    @EventHandler
+    public void on (PlayerInteractEntityEvent event) {
+        Player player = event.getPlayer ();
+        if (event.getRightClicked () instanceof Villager) {
+            Villager villager = (Villager) event.getRightClicked ();
+            if (villager.getCustomName (). equalsIgnoreCase ("Murder")) {
+                player.sendMessage("O kurwa dziala!");
+            }
+        }
     }
 }
