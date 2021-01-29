@@ -28,20 +28,4 @@ public final class Murder extends JavaPlugin {
 
         getLogger().info(ChatColor.RED + " [MurderMystery] Plugin is disable! " );
     }
-
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-        if(cmd.getName().equalsIgnoreCase("SetVillager")) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
-                if (player.hasPermission("npc")) {
-                    Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
-                    villager.setCustomName("Murder");
-                    player.sendMessage(ChatColor.RED + "Villager was created!");
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 }
