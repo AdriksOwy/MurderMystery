@@ -22,30 +22,7 @@ public class WaitingRoom extends BukkitRunnable {
     }
 
     public void run() {
-
-        switch (stage) {
-            case 1:
-                time = 60;
-                delay = 30;
-                break;
-            case 2:
-                time = 30;
-                delay = 15;
-                break;
-            case 3:
-                time = 15;
-                delay = 5;
-                break;
-            case 4:
-                time = 10;
-                delay = 5;
-                break;
-            case 5:
-                time = 5;
-                delay = 5;
-                break;
-        }
-
+        updateTimeAndDelay();
         List<Player> players = world.getPlayers();
         if (stage != 6) {
             int mods = 0;
@@ -67,6 +44,30 @@ public class WaitingRoom extends BukkitRunnable {
             }
         } else {
             players.forEach(player -> player.sendMessage("Gra właśnie się rozpoczęła"));
+        }
+    }
+    private void updateTimeAndDelay(){
+        switch (stage) {
+            case 1:
+                time = 60;
+                delay = 30;
+                break;
+            case 2:
+                time = 30;
+                delay = 15;
+                break;
+            case 3:
+                time = 15;
+                delay = 5;
+                break;
+            case 4:
+                time = 10;
+                delay = 5;
+                break;
+            case 5:
+                time = 5;
+                delay = 5;
+                break;
         }
     }
 }
