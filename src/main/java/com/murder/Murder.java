@@ -2,6 +2,8 @@ package com.murder;
 
 import com.murder.events.MurderNPCEvent;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
@@ -35,14 +37,18 @@ public final class Murder extends JavaPlugin {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 if (player.hasPermission("npc")) {
-                    Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
-                    villager.setAI(false);
-                    villager.setCustomName(ChatColor.YELLOW + "" + ChatColor.BOLD + "> KLIKNIJ PRZYCISK <");
+                    spawnMurderVillager(player.getWorld(), player.getLocation());
                     player.sendMessage(ChatColor.RED + "Villager was created!");
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    private void spawnMurderVillager(World world, Location location){
+        Villager villager = (Villager) world.spawnEntity(location, EntityType.VILLAGER);
+        villager.setCustomName(ChatColor.YELLOW + "" + ChatColor.BOLD + "> KLIKNIJ PRZYCISK <");
+        villager.setAI(false);
     }
 }
