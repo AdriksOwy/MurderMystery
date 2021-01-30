@@ -8,14 +8,18 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 
 public class SpawnNPC implements CommandRunner {
+
     CommandData data;
 
-    private void spawnMurderVillager(World world, Location location){
+    private void spawnMurderVillager(World world, Location location) {
+
         Villager villager = (Villager) world.spawnEntity(location, EntityType.VILLAGER);
         villager.setCustomName(ChatColor.YELLOW + "" + ChatColor.BOLD + "> KLIKNIJ PRZYCISK <");
         villager.setAI(false);
     }
-    public boolean run(){
+
+    public boolean run() {
+
         if (data.sender instanceof Player) {
             Player player = (Player) data.sender;
             if (player.hasPermission("npc")) {
@@ -27,7 +31,8 @@ public class SpawnNPC implements CommandRunner {
         return false;
     }
 
-    public SpawnNPC(CommandData data){
+    public SpawnNPC(CommandData data) {
+
         this.data = data;
     }
 }

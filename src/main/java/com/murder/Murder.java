@@ -12,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Murder extends JavaPlugin {
 
     static JavaPlugin plugin;
+
     public static JavaPlugin getMainPlugin() {
 
         return plugin;
@@ -32,11 +33,12 @@ public final class Murder extends JavaPlugin {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+
         try {
             CommandData data = new CommandData(sender, cmd, label, args);
-            CommandRunner command =  CommandRunnerFactory.create(data);
+            CommandRunner command = CommandRunnerFactory.create(data);
             return command.run();
-        } catch (ClassNotFoundException ex){
+        } catch (ClassNotFoundException ex) {
             return false;
         }
     }
