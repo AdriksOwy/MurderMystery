@@ -1,9 +1,8 @@
 package com.murder;
 
+import com.murder.commands.SpawnNPC;
 import com.murder.events.MurderNPCEvent;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
@@ -37,7 +36,8 @@ public final class Murder extends JavaPlugin {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 if (player.hasPermission("npc")) {
-                    spawnMurderVillager(player.getWorld(), player.getLocation());
+                    SpawnNPC spawnNPC = new SpawnNPC(player.getWorld(), player.getLocation());
+                    spawnNPC.spawnMurderVillager();
                     player.sendMessage(ChatColor.RED + "Villager was created!");
                     return true;
                 }
