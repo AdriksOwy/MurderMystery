@@ -34,7 +34,7 @@ public final class Murder extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         try {
             CommandData data = new CommandData(sender, cmd, label, args);
-            CommandRunner command =  CommandRunnerFactory.createCommandRunner(data);
+            CommandRunner command =  CommandRunnerFactory.create(data);
             return command.run();
         } catch (ClassNotFoundException ex){
             return false;
