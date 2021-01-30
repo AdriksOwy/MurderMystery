@@ -37,7 +37,7 @@ public final class Murder extends JavaPlugin {
                 if (player.hasPermission("npc")) {
                     Villager villager = (Villager) player.getWorld().spawnEntity(player.getLocation(), EntityType.VILLAGER);
                     villager.setAI(false);
-                    villager.setCustomName(ChatColor.GREEN + "" + ChatColor.BOLD + "Murder Mystery");
+                    villager.setCustomName(ChatColor.YELLOW + "" + ChatColor.BOLD + "> KLIKNIJ PRZYCISK <");
                     player.sendMessage(ChatColor.RED + "Villager was created!");
                     return true;
                 }
