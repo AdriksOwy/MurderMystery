@@ -16,7 +16,7 @@ public class WorldManager {
 
    public JavaPlugin plugin;
 
-    public WorldManager(){
+    public WorldManager() {
 
         this.plugin = Murder.getMainPlugin();
     }

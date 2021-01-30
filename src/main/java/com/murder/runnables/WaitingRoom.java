@@ -9,15 +9,20 @@ import java.util.List;
 
 
 public class WaitingRoom extends BukkitRunnable {
+
     private final World world;
     private final int stage;
     private int time;
     private int delay;
+
     public WaitingRoom(World world, int stage) {
+
         this.world = world;
         this.stage = stage;
     }
+
     public void run() {
+
         switch (stage) {
             case 1:
                 time = 60;
@@ -40,6 +45,7 @@ public class WaitingRoom extends BukkitRunnable {
                 delay = 5;
                 break;
         }
+
         List<Player> players = world.getPlayers();
         if (stage != 6) {
             int mods = 0;
@@ -62,6 +68,5 @@ public class WaitingRoom extends BukkitRunnable {
         } else {
             players.forEach(player -> player.sendMessage("Gra właśnie się rozpoczęła"));
         }
-
     }
 }
