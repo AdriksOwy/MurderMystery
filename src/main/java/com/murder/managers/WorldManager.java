@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class WorldManager {
+
    public JavaPlugin plugin;
 
     public WorldManager(){
@@ -20,7 +21,8 @@ public class WorldManager {
         this.plugin = Murder.getMainPlugin();
     }
 
-    public void createWorld(String world){
+    public void createWorld(String world) {
+
         File dataFolder = new File(plugin.getDataFolder().getPath());
         String strData = dataFolder.toString();
 
@@ -47,6 +49,7 @@ public class WorldManager {
     }
 
     public void deleteWorld(String world) {
+
         Bukkit.getServer().unloadWorld(world, true);
         File dir = new File(Bukkit.getServer().getWorld(world).getWorldFolder().getPath());
 
@@ -58,13 +61,12 @@ public class WorldManager {
         }
     }
 
-    public void teleportPlayersToLocation(List<Player> players, String world, int x, int y, int z){
+    public void teleportPlayersToLocation(List<Player> players, String world, int x, int y, int z) {
+
         Location location = new Location(Bukkit.getWorld(world), x, y, z);
         for(int i=0; i<=players.size(); i++) {
             Player player = players.get(i);
             player.teleport(location);
         }
-
     }
-
 }
