@@ -1,11 +1,12 @@
 package com.murder;
 
-import com.murder.commands.SpawnNPC;
+import com.murder.commands.CommandData;
+import com.murder.commands.CommandRunner;
+import com.murder.commands.CommandRunnerFactory;
 import com.murder.events.MurderNPCEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Murder extends JavaPlugin {
@@ -31,18 +32,12 @@ public final class Murder extends JavaPlugin {
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-        if(cmd.getName().equalsIgnoreCase("SetVillager")) {
-            if (sender instanceof Player) {
-                Player player = (Player) sender;
-                if (player.hasPermission("npc")) {
-                    SpawnNPC spawnNPC = new SpawnNPC(player.getWorld(), player.getLocation());
-                    spawnNPC.spawnMurderVillager();
-                    player.sendMessage(ChatColor.RED + "Villager was created!");
-                    return true;
-                }
-            }
+        try {
+            CommandData data = new CommandData(sender, cmd, label, args);
+            CommandRunner command =  CommandRunnerFactory.createCommandRunner(data);
+            return command.run();
+        } catch (ClassNotFoundException ex){
+            return false;
         }
-        return false;
     }
 }
