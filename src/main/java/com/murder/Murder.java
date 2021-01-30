@@ -45,10 +45,4 @@ public final class Murder extends JavaPlugin {
         }
         return false;
     }
-
-    private void spawnMurderVillager(World world, Location location){
-        Villager villager = (Villager) world.spawnEntity(location, EntityType.VILLAGER);
-        villager.setCustomName(ChatColor.YELLOW + "" + ChatColor.BOLD + "> KLIKNIJ PRZYCISK <");
-        villager.setAI(false);
-    }
 }
