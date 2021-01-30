@@ -33,18 +33,22 @@ public class WaitingRoom extends BukkitRunnable {
             }
             int playersCount = players.size() - mods;
             if (playersCount >= 1) {
-                players.forEach(player -> player.sendMessage("Gra rozpocznie się za "+time+" sekund"));
+                sendToAll("Gra rozpocznie się za "+time+" sekund");
                 new WaitingRoom(world, stage + 1).runTaskLaterAsynchronously(Murder.getMainPlugin(), delay * 20L);
             }
             else {
                 new WaitingRoom(world, 1).runTaskLaterAsynchronously(Murder.getMainPlugin(), 5 * 20);
                 if (stage != 1) {
-                    players.forEach(player -> player.sendMessage("Rozpoczecie gry zostalo przerwane"));
+                    sendToAll("Rozpoczecie gry zostalo przerwane");
                 }
             }
         } else {
-            players.forEach(player -> player.sendMessage("Gra właśnie się rozpoczęła"));
+            sendToAll("Gra właśnie się rozpoczęła");
         }
+    }
+    private void sendToAll(String message){
+        List<Player> players = world.getPlayers();
+        players.forEach(player -> player.sendMessage(message));
     }
     private void updateTimeAndDelay(){
         switch (stage) {
