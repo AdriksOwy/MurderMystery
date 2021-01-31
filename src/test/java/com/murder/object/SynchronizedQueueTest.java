@@ -9,14 +9,18 @@ import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
 public class SynchronizedQueueTest {
+    
     SynchronizedQueue queue;
 
     @Before
     public void init(){
+        
         queue = new SynchronizedQueue<Object>();
     }
+    
     @Test
     public void testArePushAndPopWorkProperlyOnOneThread(){
+        
         queue.push(1);
         queue.push(2);
         queue.push(3);
