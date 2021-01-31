@@ -46,6 +46,7 @@ public class WaitingRoom extends BukkitRunnable {
             }
         } else {
             sendToAll("Gra właśnie się rozpoczęła");
+            // game init here
         }
     }
 
