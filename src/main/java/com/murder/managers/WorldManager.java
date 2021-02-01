@@ -26,7 +26,7 @@ public class WorldManager {
         File dataFolder = new File(plugin.getDataFolder().getPath());
         String strData = dataFolder.toString();
 
-        String[] split = strData.toString().split(File.pathSeparator);
+        String[] split = strData.split(File.pathSeparator);
         String rootFolder = split[split.length - 3];
 
         File root = new File(rootFolder);
