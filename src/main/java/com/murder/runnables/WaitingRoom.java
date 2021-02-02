@@ -34,6 +34,7 @@ public class WaitingRoom extends BukkitRunnable {
             }
 
             int playersCount = players.size() - mods;
+
             if (playersCount >= 1) {
                 sendToAll("Gra rozpocznie się za "+time+" sekund");
                 new WaitingRoom(world, stage + 1).runTaskLaterAsynchronously(Murder.getMainPlugin(), delay * 20L);
