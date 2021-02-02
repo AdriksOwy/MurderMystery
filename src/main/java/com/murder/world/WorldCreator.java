@@ -16,7 +16,6 @@ public class WorldCreator {
     private String worldName;
 
     public World createWorld(String world) throws IOException {
-
         File dataFolder = new File(plugin.getDataFolder().getPath());
         String strData = dataFolder.toString();
 
