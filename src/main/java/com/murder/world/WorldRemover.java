@@ -15,7 +15,6 @@ public class WorldRemover {
     private World world;
 
     public void deleteWorld() {
-
         Bukkit.getServer().unloadWorld(world, true);
         File dir = new File(world.getWorldFolder().getPath());
 
