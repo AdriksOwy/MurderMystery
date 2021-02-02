@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class WorldRemover {
+
     private JavaPlugin plugin;
     private World world;
 
@@ -31,6 +32,7 @@ public class WorldRemover {
         this.world = Bukkit.getWorld(worldName);
         this.plugin = Murder.getMainPlugin();
     }
+
     public WorldRemover(World world) {
 
         this.world = world;

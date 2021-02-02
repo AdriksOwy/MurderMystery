@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class WorldCreator {
+
     private JavaPlugin plugin;
     private String worldName;
 
@@ -37,6 +38,7 @@ public class WorldCreator {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
         org.bukkit.WorldCreator creator = new org.bukkit.WorldCreator(world);
         return Bukkit.getServer().createWorld(creator);
     }
