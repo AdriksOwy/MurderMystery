@@ -19,7 +19,6 @@ public class SpawnNPC implements CommandRunner {
     }
 
     public boolean run() {
-
         if (data.sender instanceof Player) {
             Player player = (Player) data.sender;
             if (player.hasPermission("npc")) {
