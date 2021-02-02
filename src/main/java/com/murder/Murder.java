@@ -24,6 +24,7 @@ public final class Murder extends JavaPlugin {
         plugin = this;
         getServer().getPluginManager().registerEvents(new MurderNPCEvent(), this);
         getLogger().info( ChatColor.AQUA + " [MurderMystery] Plugin is enable! " );
+
     }
 
     @Override
