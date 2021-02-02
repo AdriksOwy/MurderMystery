@@ -16,7 +16,7 @@ public class MurderNPCEvent implements Listener {
         if (event.getRightClicked() instanceof Villager) {
             Villager villager = (Villager) event.getRightClicked();
             if (villager.getCustomName().equalsIgnoreCase(ChatColor.YELLOW + "" + ChatColor.BOLD + "> KLIKNIJ PRZYCISK <")) {
-                player.sendMessage(ChatColor.RED + "Trwa laczenie z serwerem...");
+                player.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "Trwa laczenie z serwerem...");
             }
         }
     }
