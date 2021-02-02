@@ -22,7 +22,6 @@ public class WaitingRoom extends BukkitRunnable {
     }
 
     public void run() {
-
         updateTimeAndDelay();
         List<Player> players = world.getPlayers();
         if (stage != 6) {
@@ -52,13 +51,11 @@ public class WaitingRoom extends BukkitRunnable {
     }
 
     private void sendToAll(String message) {
-
         List<Player> players = world.getPlayers();
         players.forEach(player -> player.sendMessage(message));
     }
 
     private void updateTimeAndDelay() {
-
         switch (stage) {
             case 1:
                 time = 60;
