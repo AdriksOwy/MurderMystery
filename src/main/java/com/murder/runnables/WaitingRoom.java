@@ -1,7 +1,6 @@
 package com.murder.runnables;
 
 import com.murder.Murder;
-import com.murder.managers.GamesManager;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffectType;
@@ -17,7 +16,7 @@ public class WaitingRoom extends BukkitRunnable {
     private int delay;
 
     public void startUpdates(int gameID) {
-        new updatePlayersCount(gameID, world).runTaskTimerAsynchronously(Murder.getMainPlugin(), 0, 10);
+        new UpdatePlayersCount(gameID, world).runTaskTimerAsynchronously(Murder.getMainPlugin(), 0, 10);
     }
 
     public WaitingRoom(World world, int stage) {
@@ -86,10 +85,10 @@ public class WaitingRoom extends BukkitRunnable {
     }
 }
 
-class updatePlayersCount extends BukkitRunnable {
+class UpdatePlayersCount extends BukkitRunnable {
     private final World world;
     private final int gameID;
-    public updatePlayersCount(int gameID, World world) {
+    public UpdatePlayersCount(int gameID, World world) {
         this.gameID = gameID;
         this.world = world;
     }
