@@ -9,17 +9,6 @@ public class GamesManager {
 
     private List<Game> gameList;
 
-    private Game createGameAndAddToList() {
-        /*TODO
-         * make class GameMap
-        GameMap gameMap = GameMap.getRandom();
-        Game game = new Game(gameMap, 12);
-        gameList.add(game);
-        return game;
-         */
-        return null;
-    }
-
     public synchronized boolean addPlayerToGameOrCreateGame(Player player) {
         int lastIndex = gameList.size() - 1;
         Game game = gameList.get(lastIndex);
@@ -29,6 +18,17 @@ public class GamesManager {
             Game newGame = createGameAndAddToList();
             return newGame.teleportPlayer(player);
         }
+    }
+
+    private Game createGameAndAddToList() {
+        /*TODO
+         * make class GameMap
+        GameMap gameMap = GameMap.getRandom();
+        Game game = new Game(gameMap, 12);
+        gameList.add(game);
+        return game;
+         */
+        return null;
     }
 
     public List<Game> getGames() {
