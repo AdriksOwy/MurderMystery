@@ -1,6 +1,7 @@
 package com.murder.world;
 
 import com.murder.Murder;
+import com.murder.runnables.WaitingRoom;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -40,6 +41,9 @@ public class WorldCreator {
 
         org.bukkit.WorldCreator creator = new org.bukkit.WorldCreator(world);
         return Bukkit.getServer().createWorld(creator);
+        // insert here waitngroom:
+        //WaitingRoom waitingRoom = new WaitingRoom(world, 1).runTaskAsynchronously(Murder.getMainPlugin());
+        //waitingRoom.startUpdates(gameID);
     }
 
     public WorldCreator(String worldName) {
