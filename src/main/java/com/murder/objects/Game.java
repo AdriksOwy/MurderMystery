@@ -1,15 +1,18 @@
 package com.murder.objects;
 
-import org.bukkit.World;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 public class Game {
 
-    private World world;
+    private int maxPlayers;
+    private Location location;
     private int playersCount;
     private boolean isGameStarted = false;
 
-    public Game(World world) {
-        this.world = world;
+    public Game(Location location, int maxPlayers) {
+        this.location = location;
+        this.maxPlayers = maxPlayers;
     }
 
     public int getPlayersCount() {
@@ -24,7 +27,20 @@ public class Game {
         this.playersCount = playersCount;
     }
 
-    public void setGameStatus(boolean isGameStarted) {
-        this.isGameStarted = isGameStarted;
+    public boolean teleportPlayer(Player player) {
+        if(player.teleport(location)) {
+            updateStatus();
+            playersCount++;
+            return true;
+        }
+        return false;
+    }
+
+    private void updateStatus() {
+        isGameStarted = ( playersCount >= maxPlayers );
+    }
+
+    public int getMaxPlayers() {
+        return maxPlayers;
     }
 }
