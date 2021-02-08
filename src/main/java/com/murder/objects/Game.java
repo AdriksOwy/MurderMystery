@@ -5,14 +5,12 @@ import org.bukkit.entity.Player;
 
 public class Game {
 
-    private int maxPlayers;
-    private Location location;
+    private GameMap gameMap;
     private int playersCount;
     private boolean isGameStarted = false;
 
-    public Game(Location location, int maxPlayers) {
-        this.location = location;
-        this.maxPlayers = maxPlayers;
+    public Game(GameMap gameMap) {
+        this.gameMap = gameMap;
     }
 
     public int getPlayersCount() {
@@ -28,7 +26,7 @@ public class Game {
     }
 
     public boolean teleportPlayer(Player player) {
-        if(player.teleport(location)) {
+        if(player.teleport(gameMap.getEnterLocation())) {
             updateStatus();
             playersCount++;
             return true;
@@ -37,10 +35,10 @@ public class Game {
     }
 
     private void updateStatus() {
-        isGameStarted = ( playersCount >= maxPlayers );
+        isGameStarted = ( playersCount >= getMaxOfPlayers() );
     }
 
-    public int getMaxPlayers() {
-        return maxPlayers;
+    public int getMaxOfPlayers() {
+        return gameMap.getMaximumOfPlayers();
     }
 }
