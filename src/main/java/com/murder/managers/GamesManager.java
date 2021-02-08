@@ -12,7 +12,7 @@ public class GamesManager {
     public synchronized boolean addPlayerToGameOrCreateGame(Player player) {
         int lastIndex = gameList.size() - 1;
         Game game = gameList.get(lastIndex);
-        if (game.getPlayersCount() < game.getMaxPlayers()) {
+        if (game.getPlayersCount() < game.getMaxOfPlayers()) {
             return game.teleportPlayer(player);
         } else {
             Game newGame = createGameAndAddToList();
