@@ -1,6 +1,7 @@
 package com.murder.managers;
 
 import com.murder.objects.Game;
+import com.murder.objects.GameMap;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -21,14 +22,10 @@ public class GamesManager {
     }
 
     private Game createGameAndAddToList() {
-        /*TODO
-         * make class GameMap
         GameMap gameMap = GameMap.getRandom();
-        Game game = new Game(gameMap, 12);
+        Game game = new Game(gameMap);
         gameList.add(game);
         return game;
-         */
-        return null;
     }
 
     public List<Game> getGames() {
