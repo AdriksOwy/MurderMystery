@@ -6,8 +6,8 @@ import org.bukkit.World;
 import java.util.Collection;
 
 public class GameMap {
-    private Location enterLocation;
-    private int maximumOfPlayers;
+    private final Location enterLocation;
+    private final int maximumOfPlayers = 12;
 
     public static GameMap getRandom() {
         /*TODO
@@ -29,8 +29,7 @@ public class GameMap {
         return maximumOfPlayers;
     }
 
-    public GameMap(Location enterLocation, int maximumOfPlayers) {
+    public GameMap(Location enterLocation) {
         this.enterLocation = enterLocation;
-        this.maximumOfPlayers = maximumOfPlayers;
     }
 }
